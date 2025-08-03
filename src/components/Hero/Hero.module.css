@@ -1,0 +1,198 @@
+/* Hero Section */
+/* src/components/Hero.css */
+
+.hero {
+  margin-top: 50px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 120px;
+  background: url("../../assets/images/background.webp") no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  background-position: center top;
+  position: relative; /* Add this */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; /* Add this */
+  left: 0; /* Add this */
+  width: 100%;
+  height: 100%; /* Change from 100vh to 100% */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Add this for better stacking */
+}
+
+.heroContent {
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+
+  font-weight: 700;
+}
+
+.line {
+  background-color: #fae6d1;
+  height: 0.3rem;
+  width: 100px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.heroForm {
+  margin-top: 2.5rem;
+  background: #1b262c;
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formRow {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.heroForm input,
+.heroForm textarea {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  color: #333;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.heroForm input::placeholder,
+.heroForm textarea::placeholder {
+  color: #666;
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.heroForm input:focus,
+.heroForm textarea:focus {
+  outline: none;
+  border-color: #fae6d1;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(250, 230, 209, 0.3);
+  transform: translateY(-2px);
+}
+.formSubmitBtn {
+  background: #fae6d1;
+  color: black;
+  border: none;
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  width: 100%;
+}
+
+.formSubmitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+.formSubmitBtn:active {
+  transform: translateY(-1px);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .heroForm {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .heroForm textarea {
+    grid-column: span 1;
+  }
+
+  .heroForm input,
+  .heroForm textarea {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .formSubmitBtn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 15px;
+    margin-top: 30px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .heroForm {
+    padding: 1.5rem;
+  }
+
+  .formRow {
+    gap: 1rem;
+  }
+
+  .heroForm input,
+  .heroForm textarea {
+    padding: 0.75rem;
+  }
+}

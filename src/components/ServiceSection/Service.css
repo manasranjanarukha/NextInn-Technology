@@ -1,0 +1,186 @@
+/* Service.css */
+
+/* Main section styles */
+.services-section {
+  padding: 80px 24px;
+  background: #1b262c;
+  min-height: 100vh;
+}
+
+.services-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+.services-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1px;
+
+  border-radius: 9999px;
+  margin-bottom: 24px;
+}
+.service__separator {
+  width: 80px;
+  height: 4px;
+  background: #fae6d1;
+  margin: 0.5rem 0;
+  border-radius: 2px;
+  position: relative;
+  animation: expandWidth 1s ease-out 0.5s both;
+}
+
+.service__separator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f1f5f9;
+  border-radius: 2px;
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+.badge-text {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* Services grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* Service card styles */
+.service-card {
+  position: relative;
+
+  padding: 1px;
+}
+
+/* Service card content */
+.service-card-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  padding: 32px;
+  height: 100%;
+  backdrop-filter: blur(8px);
+}
+
+/* Floating elements */
+.service-card-floating {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  opacity: 0.1;
+  transition: opacity 0.5s ease;
+}
+
+/* Service icon */
+.service-image-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 24px;
+  transition: transform 0.5s ease;
+}
+.service-image {
+  align-self: center;
+  width: 100%;
+  max-width: min(200px, 80vw); /* Responsive max-width */
+  height: auto; /* Let height scale naturally */
+  aspect-ratio: 1; /* Maintains square aspect ratio */
+  object-fit: cover;
+  border-radius: 50%; /* Use percentage for perfect circle */
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+/* .service-image-fluid {
+  align-self: center;
+  width: 100%;
+  max-width: clamp(
+    100px,
+    20vw,
+    200px
+  ); 
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+} */
+
+/* Service title */
+.service-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Service description */
+.service-description {
+  color: #fff;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  text-align: center;
+  font-size: 16px;
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+/* Responsive design */
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .service-card-content h3 {
+    font-size: 20px;
+  }
+
+  .service-image {
+    max-width: min(150px, 70vw);
+  }
+}
+@media (max-width: 480px) {
+  .service-image {
+    max-width: min(130px, 60vw);
+  }
+  .service-card-content h3 {
+    font-size: 20px;
+  }
+
+  .badge-text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+  }
+}
