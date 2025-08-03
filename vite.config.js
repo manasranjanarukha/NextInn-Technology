@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/Nextinn_Technology/",
+  base: "/NextInn_Technology/",
   plugins: [react()],
   server: {
     host: true, // <-- This allows LAN access
